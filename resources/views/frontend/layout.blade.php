@@ -184,9 +184,15 @@
         <img width="1000px" height="500px" src="./assets/img/oto.png" alt="">
         <div class="row">
             <?php
-             $floor_count = $floor[0]->floor_count;
-             $park_count = $floor[0]->park_count;
+            $floor_count = 0;
+            $park_count = 0; 
+            if(count($floor) > 0){
+                $floor_count = $floor[0]->floor_count;
+                $park_count = $floor[0]->park_count;
+            }
+             
             ?>
+            
             @for($i=1 ; $i<=$floor_count; $i++)
                 <div class="col-sm-3 m-4">
                     <div class="card">
@@ -195,7 +201,7 @@
                                 <h1>
                                     {{$i}}. Kat
                                 </h1>
-                                <p class="card-text">Rerzervasyon yapmak için tıklayın</p>
+                                <p class="card-text">Rezervasyon yapmak için tıklayın</p>
                             </a>
                         </div>
                     </div>

@@ -57,9 +57,10 @@ class UserController extends Controller
                 'email' => $request->post('email'),
                 'password' => Hash::make($request->post('password')),
                 'name' => $request->post('name'),
-                'type' => 2
+                
             ]);
 
+    
             if ($save) {
                 return response()->json([
                     'status' => 1,
